@@ -8,3 +8,5 @@ refresh_db:
 run:
 	python src/run_app.py
 
+create_env:
+	python -m virtualenv env
