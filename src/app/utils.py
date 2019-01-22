@@ -42,6 +42,7 @@ def og_scrape_worker(canonical_url):
             update_to_error_url_status_in_db(canonical_url)
 
     except Exception as e:
+        print "Error occurred on scrap worker thread: %s" % e
         update_to_error_url_status_in_db(canonical_url)
 
 
@@ -120,6 +121,7 @@ def get_url_data_from_db(url_id): # Assuming data coming from the open graph wil
     status = url_doc['status']
     out = {} if status != DONE_STATUS else og_collection.find_one({'_id': url_doc['data_id']})
     out['scrape_status'] = STATUSES[status]
-    del out['_id']
+    if out.has_key('_id'):
+        del out['_id']
 
     return out
