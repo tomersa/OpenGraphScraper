@@ -28,8 +28,15 @@ Response: JSON:
               "id": "10150237978467733"
           }
 
+============= Tech stack ============= 
+Flask
+Python
+OpenGraph python library.
+*For more information check out the requirements.txt
+
 ============= example curl commands ============= 
-4. curl examples which demonstrate the usage of the service:
-   curl -X POST --data "url=http://www.microsoft.com" localhost:8080/stories
-   curl -X GET localhost:8080/stories/5c3db58c68002b1effb61a71
-   *Assuming 5c3db58c68002b1effb61a71 is the id returned from the post command
+curl examples which demonstrate the usage of the service:
+curl -X POST --data "url=http://www.microsoft.com" localhost:8080/stories
+curl -X GET localhost:8080/stories/5c3db58c68002b1effb61a71
+*Assuming 5c3db58c68002b1effb61a71 is the id returned from the post command
+
